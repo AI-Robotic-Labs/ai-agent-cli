@@ -1,0 +1,7 @@
+[package]
+name = "agent-cli-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+agent-cli = { path = "../agent-cli" }
