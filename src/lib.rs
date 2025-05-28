@@ -111,10 +111,9 @@ mod tests {
         assert!(cli.create("test-agent").is_ok());
         let agent = cli.get_agent().unwrap();
         assert_eq!(agent.name, "test-agent");
-        assert_eq!(agent.state, AgentState::Created);
+        assert!(matches!(agent.state, AgentState::Created));
         assert!(cli.create("another-agent").is_err()); // Should fail: agent exists
     }
-
     #[test]
     fn test_add_skill() {
         let mut cli = AgentCLI::new();
@@ -132,19 +131,17 @@ mod tests {
         assert!(cli.configure("goal", "assist user").is_ok());
         let agent = cli.get_agent().unwrap();
         assert_eq!(agent.config.get("goal"), Some(&"assist user".to_string()));
-        assert_eq!(agent.state, AgentState::Configured);
+        assert!(matches!(agent.state, AgentState::Configured));
     }
-
     #[test]
     fn test_run() {
         let mut cli = AgentCLI::new();
         cli.create("test-agent").unwrap();
         assert!(cli.run().is_ok());
         let agent = cli.get_agent().unwrap();
-        assert_eq!(agent.state, AgentState::Running);
+        assert!(matches!(agent.state, AgentState::Running));
         assert!(cli.run().is_err()); // Already running
     }
-
     #[test]
     fn test_shutdown() {
         let mut cli = AgentCLI::new();
@@ -153,4 +150,9 @@ mod tests {
         let agent = cli.get_agent();
         assert!(agent.is_none());
     }
+}
+
+#[cfg(not(test))]
+pub fn main() {
+    // Empty main function
 }
