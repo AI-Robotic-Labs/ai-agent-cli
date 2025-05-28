@@ -31,7 +31,7 @@
 Clone or create the project:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/AI-Robotic-Labs/ai-agent-cli.git
 cd agent-cli
 ```
 
