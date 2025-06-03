@@ -1,5 +1,7 @@
 # Agent CLI
 
+[![crates.io](https://img.shields.io/crates/v/agent_cli)](https://crates.io/crates/agent_cli)
+
 **agent-cli** is a Rust library (with an optional CLI) implementing the **Agent Life Cycle** framework, inspired by the [sandy-mount/sandymount](https://github.com/sandy-mount/sandymount) Wiki. It provides a modular and reusable implementation for managing intelligent, autonomous software agents through their lifecycle phases: **Create**, **Add Skills**, **Configure**, **Run**, and **Shutdown**.
 
 ---
