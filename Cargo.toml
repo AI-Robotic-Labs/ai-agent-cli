@@ -2,7 +2,7 @@
 name = "agent-cli"
 version = "0.1.0"
 description = "Agent AI command line"
-homepage = "https://github.com/AI-Robotic-Labs/ai-agent-cli"
+repository = "https://github.com/AI-Robotic-Labs/ai-agent-cli"
 documentation = "https://docs.rs/agent_cli"
 
 license = "MIT"
